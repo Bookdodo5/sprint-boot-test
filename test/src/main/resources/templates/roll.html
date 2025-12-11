@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll</title>
+</head>
+<body>
+    <h2>これはあなたの情報かにゃ？ <span class="emoji">╰(*°▽°*)╯</span></h2>
+    名前：<strong th:text="${data.name}"></strong><br/>
+    年齢：<strong th:text="${data.age}"></strong><br/>
+</body>
+<style>
+    .emoji {
+        font-size: 20px;
+        color:cadetblue;
+    }
+</style>
+</html>

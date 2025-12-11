@@ -1,19 +1,24 @@
 package com.example.test.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.example.test.model.dataModel;
 
 @Controller
 public class FortuneController {
 
-    @RequestMapping("Fortune")
+    @RequestMapping("/")
     public String start() {
-        double fn = Math.random();
-        if(fn>=0.7) {
-            return "Good.html";
-        }
-        else {
-            return "Bad.html";
-        }
+        return "start.html";
+    }
+
+    @RequestMapping("/roll")
+    public ModelAndView roll(@ModelAttribute dataModel data, ModelAndView mav) {
+        mav.addObject("data", data);
+        mav.setViewName("roll.html");
+        return mav;
     }
 }
